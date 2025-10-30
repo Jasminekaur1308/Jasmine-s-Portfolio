@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmine Kaur | Polymath. Investor. Innovator.</title>
+    <meta name="description" content="Jasmine Kaur - SEBI Certified Investor, Author, Business Strategist, and Visionary in Finance & Quantitative Trading. Explore a portfolio of innovation, leadership, and excellence.">
+    <meta name="keywords" content="finance, quant trading, investor, author, business strategist, polymath, stock markets, fintech, leadership, visionary, Jasmine Kaur">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink-gold: #f4c2d1;
+            --deep-pink: #e91e63;
+            --soft-pink: #fce4ec;
+            --champagne: #f5e6d3;
+            --ivory: #fffff0;
+            --black: #000000;
+            --gold: #d4af37;
+            --text-dark: #2c2c2c;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #fce4ec 0%, #f5e6d3 50%, #fffff0 100%);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Animated Background Ticker */
+        .ticker-wrap {
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            overflow: hidden;
+            height: 35px;
+            background: rgba(0, 0, 0, 0.03);
+            z-index: 999;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .ticker {
+            display: inline-block;
+            height: 35px;
+            line-height: 35px;
+            white-space: nowrap;
+            padding-right: 100%;
+            animation: ticker 40s linear infinite;
+            font-size: 11px;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(233, 30, 99, 0.1);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, var(--deep-pink), var(--gold));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: 'Cormorant Garamond', serif;
+     }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--deep-pink), var(--gold));
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(233, 30, 99, 0.1), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1), transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+          font-size: 4rem;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, var(--deep-pink), var(--gold));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .hero-text .tagline {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--deep-pink), var(--gold));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.2), rgba(212, 175, 55, 0.2));
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><rect fill="%23fce4ec" width="500" height="500"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .hero-image-placeholder {
+            font-size: 6rem;
+            color: var(--deep-pink);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+          font-size: 3rem;
+         text-align: center;
+          margin-bottom: 3rem;
+          background: linear-gradient(135deg, var(--deep-pink), var(--gold));
+         -webkit-background-clip: text;
+         background-clip: text;
+         -webkit-text-fill-color: transparent;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlight {
+            background: rgba(233, 30, 99, 0.05);
+            padding: 2rem;
+            border-left: 4px solid var(--deep-pink);
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--deep-pink);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-pink);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.8), rgba(212, 175, 55, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--deep-pink);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--deep-pink);
+        }
+
+        /* Certifications Section */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateX(10px);
+            border-left-color: var(--deep-pink);
+        }
+
+        .cert-item h3 {
+            font-size: 1.2rem;
+            color: var(--deep-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Languages Section */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .language-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .language-flag {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .language-card h3 {
+            color: var(--deep-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .language-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--deep-pink), var(--gold));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Book Section */
+        .book-showcase {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--deep-pink), var(--gold));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-details h3 {
+            font-size: 2.5rem;
+            color: var(--deep-pink);
+            margin-bottom: 1rem;
+        }
+
+        .book-details p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(233, 30, 99, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--deep-pink);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #000000, #2c2c2c);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        .footer-quote {
+          font-size: 1.8rem;
+          font-family: 'Cormorant Garamond', serif;
+          margin-bottom: 1rem;
+          font-style: italic;
+          background: linear-gradient(135deg, var(--pink-gold), var(--gold));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .book-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            ✦ NIFTY 50 ↑ 2.3% ✦ S&P 500 ↑ 1.8% ✦ NASDAQ ↑ 2.1% ✦ GOLD ↑ 0.5% ✦ BUILDING EMPIRES WITH GRACE AND PRECISION ✦
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">JK</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Credentials</a></li>
+                <li><a href="#book">Book</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Jasmine Kaur</h1>
+                <p class="tagline">Polymath. Investor. Innovator.</p>
+                <p>A SEBI-certified investor and visionary entrepreneur combining analytical precision with creative innovation. Building the future of finance, one strategic decision at a time.</p>
+                <a href="#about" class="cta-button">Explore My Journey</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <div class="hero-image-inner">
+                        <img src="joy.jpg" alt="Jasmine Kaur" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-image-placeholder" style="display: none;">JK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I am Jasmine Kaur, a SEBI-certified investor, author, and entrepreneur who thrives at the intersection of finance, technology, and innovation. My journey is defined by a relentless pursuit of excellence and a commitment to creating meaningful impact.</p>
+                <p>As the visionary behind <strong>Blackstone Harbor</strong>, a financial intelligence platform, and <strong>Agriloop-Lite</strong>, a sustainable agriculture solution, I blend quantitative analysis with strategic foresight to solve complex challenges.</p>
+                <p>Beyond the markets, I authored <em>Elevated</em>, a book dedicated to empowering individuals through resilience and purpose. My work has been recognized by the Sub-Divisional Magistrate of Khanna, honoring my contributions as a youth advocate and leader.</p>
+                <div class="about-highlight">
+                    <strong>Core Values:</strong> Elegant intelligence. Purposeful ambition. Strategic empathy. Visionary leadership.
+                </div>
+            </div>
+            <div class="about-text">
+                <p>My multidisciplinary expertise spans financial markets, quantitative trading, full-stack development, and strategic business planning. I hold certifications from prestigious institutions including SEBI, Yale, Harvard, and Microsoft, reflecting my commitment to continuous learning.</p>
+                <p>As a polyglot fluent in four languages and a participant in global competitions including the Harvard Crimson Global Case and Essay Competitions, I bring a truly international perspective to problem-solving.</p>
+                <p>My mission is to democratize financial literacy, leverage technology for social good, and build enterprises that combine profitability with purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3>Financial Analysis</h3>
+                <p>Quantitative trading, portfolio management, market research, and investment strategy development</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Full-Stack Development</h3>
+                <p>C#, responsive web design, Android/iOS development, and fintech application architecture</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎯</div>
+                <h3>Strategic Planning</h3>
+                <p>Business strategy, market positioning, stakeholder management, and competitive analysis</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <h3>Problem Solving</h3>
+                <p>Analytical thinking, data-driven decision making, and innovative solution design</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌍</div>
+                <h3>Multilingual Communication</h3>
+                <p>Fluent in Punjabi, Hindi, English, with working proficiency in German</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">✍️</div>
+                <h3>Content Creation</h3>
+                <p>Authorship, thought leadership, and compelling narrative development</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">🏛️</div>
+                <div class="project-content">
+                    <h3>Blackstone Harbor</h3>
+                    <p>A sophisticated financial intelligence platform designed to democratize access to market insights, trading strategies, and investment education. Combining real-time data analytics with user-friendly interfaces to empower informed decision-making.</p>
+                    <a href="https://blackstone-harbor.github.io/blackstoneharbor/" class="project-link">Explore Platform →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">🌾</div>
+                <div class="project-content">
+                    <h3>Agriloop-Lite</h3>
+                    <p>An innovative sustainable agriculture solution leveraging technology and sattelite data to optimize farming practices, reduce waste, and promote environmental stewardship. Bridging the gap between traditional agriculture and modern efficiency.</p>
+                    <a href="https://jasminekaur1308.github.io/agriloop/" class="project-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications & Education</h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h3>SEBI Certified Investor</h3>
+                <p>National Institute of Securities Markets (NISM)</p>
+            </div>
+            <div class="cert-item">
+                <h3>Microsoft Developer</h3>
+                <p>Foundational C# Certification</p>
+            </div>
+            <div class="cert-item">
+                <h3>Stakeholders in Marketing & Finance</h3>
+                <p>The Open University</p>
+            </div>
+            <div class="cert-item">
+                <h3>Financial Markets</h3>
+                <p>Yale University - Prof. Robert Shiller</p>
+            </div>
+            <div class="cert-item">
+                <h3>Harvard Crimson Global Case Competition</h3>
+                <p>Participant - 2024</p>
+            </div>
+            <div class="cert-item">
+                <h3>Harvard Crimson Global Essay Competition</h3>
+                <p>Participant - 2024</p>
+            </div>
+            <div class="cert-item">
+                <h3>Certified Game Developer</h3>
+                <p>Advanced Game Design & Development</p>
+            </div>
+            <div class="cert-item">
+                <h3>Certified Responsive Web Designer</h3>
+                <p>freeCodeCamp</p>
+            </div>
+            <div class="cert-item">
+                <h3>Certified Android & iOS App Developer</h3>
+                <p>Cross-Platform Mobile Development</p>
+            </div>
+            <div class="cert-item">
+                <h3>Honorary Certificate</h3>
+                <p>Sub-Divisional Magistrate, Khanna - Youth Leadership & Advocacy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <h2>Languages</h2>
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-flag">🇮🇳</div>
+                <h3>Punjabi</h3>
+                <p>Native Proficiency</p>
+                <div class="language-bar">
+                    <div class="language-progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇮🇳</div>
+                <h3>Hindi</h3>
+                <p>Native Proficiency</p>
+                <div class="language-bar">
+                    <div class="language-progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇬🇧</div>
+                <h3>English</h3>
+                <p>C1 - Advanced</p>
+                <div class="language-bar">
+                    <div class="language-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇩🇪</div>
+                <h3>German</h3>
+                <p>A2 - Elementary</p>
+                <div class="language-bar">
+                    <div class="language-progress" style="width: 40%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book">
+        <h2>Book & Publications</h2>
+        <div class="book-showcase">
+            <div class="book-cover">📚</div>
+            <div class="book-details">
+                <h3>Elevated</h3>
+                <p>A transformative exploration of resilience, purpose, and personal empowerment. <em>Elevated</em> offers readers a roadmap to rise above challenges and unlock their fullest potential through strategic mindset shifts and actionable wisdom.</p>
+                <p>This book represents my commitment to sharing knowledge that elevates lives and inspires the next generation of leaders to pursue excellence with grace and determination.</p>
+                <a href="https://www.amazon.in/Elevated-Spiritual-elevation-Jasmine-Kaur-ebook/dp/B0CNNRJZH6" class="cta-button" target="_blank">Get Your Copy on Amazon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #555;">
+            Open to internships, collaborations, and opportunities in finance, fintech, and quantitative trading.
+        </p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:jasminekaurattal2@gmail.com">jasminekaurattal2@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="http://linkedin.com/in/jasmine-kaur-926697306/" target="_blank">linkedin.com/in/jasmine-kaur-926697306/</a>
